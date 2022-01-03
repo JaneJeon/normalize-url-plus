@@ -47,6 +47,12 @@ Luckily, because of our requirements (we don't really care about the body - whic
 
 For most purposes, using `got-scraping` will get you around most bot protection services, i.e. actually giving you a response, even if that response's body is empty. I've found that it works fine even in known server IPs; however, if you're seeing that your requests are being blocked, feel free to pass in a `got-scraping` instance with a residential IP proxy.
 
+### Frontend Use
+
+While the library takes in a `got` instance, you can pass in an instance of API-compliant HTTP request library, such as `ky`, which would allow you to make the HTTP requests required for normalization from within the browser (I would imagine this would be useful for frontends).
+
+If you expect `normalize-url-plus` to run in the user's browser, you can ignore all of the bits about scraping and whatnot - a vanilla `ky` instance would do - since requests from the browser are rarely blocked anyways.
+
 ## Run tests
 
 ```sh
