@@ -2,18 +2,29 @@
   "name": "normalize-url-plus",
   "version": "1.5.4",
   "description": "normalize-url plus additional features to supercharge link normalization!",
-  "exports": "./index.js",
-  "type": "module",
   "repository": "JaneJeon/normalize-url-plus",
-  "author": "Jane Jeon <me@janejeon.dev>",
+  "author": "Jane Jeon <git@janejeon.com>",
   "license": "LGPL-3.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/",
+    "package.json",
+    "LICENSE"
+  ],
   "bin": "bin/normalize.js",
   "scripts": {
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "test": "jest",
     "update-data": "curl -L -s https://rules2.clearurls.xyz/data.minify.json > data/data.minify.json",
     "lint": "run-s lint:*",
     "lint:prettier": "prettier --check .",
-    "lint:eslint": "eslint ."
+    "lint:eslint": "eslint .",
+    "build": "run-s clean build:*",
+    "build:ts": "tsc",
+    "clean": "run-s clean:*",
+    "clean:jest": "rimraf coverage reports",
+    "clean:ts": "rimraf dist **/*.tsbuildinfo",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "cacheable-lookup": "^6.0.1",
@@ -35,15 +46,21 @@
   "devDependencies": {
     "@janejeon/eslint-config": "^2.2.0",
     "@janejeon/prettier-config": "^1.1.0",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.23",
     "enhanced-resolve": "^5.8.3",
     "husky": "^4.3.8",
+    "is-ci": "^3.0.1",
     "jest": "^27.2.1",
     "jest-junit": "^13.0.0",
     "lint-staged": "12.3.7",
     "nock": "^13.1.3",
     "node-notifier": "^10.0.0",
     "npm-run-all": "^4.1.5",
-    "skip-ci": "^1.0.4"
+    "rimraf": "^3.0.2",
+    "skip-ci": "^1.0.4",
+    "ts-jest": "^27.1.4",
+    "typescript": "^4.6.3"
   },
   "keywords": [
     "normalize",

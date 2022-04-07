@@ -34,7 +34,7 @@ jobs:
     steps:
       - checkout
       - node/install-packages
-      - run: npm test -- --ci --coverage # reports automatically generated
+      - run: npm test -- --ci
 
 workflows:
   build:
