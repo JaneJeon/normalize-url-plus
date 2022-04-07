@@ -47,6 +47,8 @@
     "tld-extract": "^2.0.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
     "@janejeon/eslint-config": "^2.2.0",
     "@janejeon/prettier-config": "^1.1.0",
     "@types/jest": "^27.4.1",
@@ -80,17 +82,5 @@
     "strip",
     "trim",
     "canonical"
-  ],
-  "prettier": "@janejeon/prettier-config",
-  "eslintConfig": {
-    "root": true,
-    "parser": "@typescript-eslint/parser",
-    "plugins": [
-      "@typescript-eslint"
-    ],
-    "extends": [
-      "@janejeon",
-      "plugin:@typescript-eslint/recommended"
-    ]
-  }
+  ]
 }
