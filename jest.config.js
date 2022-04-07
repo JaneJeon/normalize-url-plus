@@ -1,6 +1,6 @@
-process.env.JEST_JUNIT_OUTPUT_DIR = 'reports/jest'
+import isCI from 'is-ci'
 
-const isCI = require('is-ci')
+process.env.JEST_JUNIT_OUTPUT_DIR = 'reports/jest'
 
 /*
  * For a detailed explanation regarding each configuration property, visit:
@@ -8,7 +8,7 @@ const isCI = require('is-ci')
  */
 
 /** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
-module.exports = {
+export default {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
