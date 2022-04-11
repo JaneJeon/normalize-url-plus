@@ -1,5 +1,5 @@
-import { dnsLookupType } from '../types'
 import debugInit from './debug'
+import type { dnsLookupType } from '../types'
 
 const debug = debugInit('utils:dns-lookup')
 
